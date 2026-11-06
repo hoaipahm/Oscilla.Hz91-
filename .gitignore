@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.test-data/
+.toolchain/
+rust-app/target/
+test-media/*.mp3
+*.log
+*.tmp

@@ -1,0 +1,22 @@
+{
+  "name": "music-green",
+  "productName": "Music Green",
+  "version": "1.0.2",
+  "description": "Offline CRT music player with reactive frequencies and a personal image surveillance feed.",
+  "private": true,
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/*.test.cjs",
+    "test:desktop": "node tests/desktop.cjs",
+    "build": "node scripts/build.cjs",
+    "build:rust": "cargo build --release --manifest-path rust-app/Cargo.toml && copy /Y rust-app\\target\\release\\music-green.exe \"Music Green.exe\""
+  },
+  "dependencies": {
+    "music-metadata": "12.2.3"
+  },
+  "devDependencies": {
+    "electron": "45.0.0",
+    "@electron/packager": "20.3.0"
+  }
+}
