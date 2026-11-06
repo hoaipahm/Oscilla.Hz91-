@@ -49,8 +49,11 @@ namespace MusicGreenHost
 
             Form form = new Form();
             form.Text = "Music Green";
-            form.ClientSize = new Size(1464, 921);
-            form.MinimumSize = new Size(900, 680);
+            Rectangle workArea = Screen.PrimaryScreen.WorkingArea;
+            int w = Math.Min(1340, Math.Max(960, workArea.Width - 60));
+            int h = Math.Min(820, Math.Max(680, workArea.Height - 50));
+            form.ClientSize = new Size(w, h);
+            form.MinimumSize = new Size(900, 640);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.BackColor = Color.FromArgb(3, 11, 8);
             if (!string.IsNullOrEmpty(iconPath) && File.Exists(iconPath))
